@@ -1,0 +1,176 @@
+:root {
+    --yellow-color: #F5C044;
+    --green-color: #4CA154;
+    --black-color: #18181B;
+    --gray-color-100: #52525A;
+    --gray-color-200: #D4D4D8;
+    --somoke-color: #FAFAF9;
+    --white-color: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    background-color: var(--somoke-color);
+    font-family: "Sora", sans-serif;
+}
+
+.container {
+    margin: 0 70px;
+}
+
+.testimonial-container {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.testimonial__reviewers-logo {
+    width: 50px;
+    height: 50px;
+    background-color: var(--yellow-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial__reviewers-logo > img {
+    filter: brightness(0) invert(1);
+    display: block;
+    width: 35px;
+    height: 35px;
+}
+
+.testimonial__reviewers-title {
+    font-size: 36px;
+    margin-top: 16px;
+}
+
+.testimonial__reviewers-description {
+    font-size: 20px;
+    color: var(--gray-color-100);
+    line-height: 32px;
+    margin-top: 20px;
+}
+
+.testimonial__reviewers-lists {
+    margin-top: 30px;
+}
+
+.testimonial__reviewers-lists > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.testimonial__reviewers-lists > div > span {
+    font-size: 14px;
+    color: var(--gray-color-100);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.testimonials-grid > div {
+    width: 100%;
+    height: 200px;
+    background-color: var(--white-color);
+    border-radius: 16px;
+}
+
+.google {
+    grid-column: 2/-1;
+    padding: 30px;
+}
+
+.google > div, .meta > div {
+    display: flex;
+}
+
+.google-image, .meta-image {
+    display: block;
+    width: 100px;
+    margin-right: 12px;
+}
+
+.meta {
+    grid-column: 1/2;
+    padding: 30px;
+}
+
+.google__icons, .meta__icons {
+    margin-bottom: 10px;
+}
+
+.google > span, .meta > span {
+    font-weight: bold;
+}
+
+.google > p, .meta > p {
+    margin-top: 10px;
+    color: var(--gray-color-100);
+}
+
+
+/* CheckBox */
+/* Hide the checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Style the label to act as the checkbox */
+label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+/* When the checkbox is checked, change the background color of the label */
+input[type="checkbox"]:checked + label {
+    background-color: transparent;
+}
+
+/* Insert SVG icon when checkbox is checked */
+input[type="checkbox"]:checked + label::before {
+    content: url('../images/Done_ring_round_fill.svg');
+}
+
+/* Insert SVG icon when checkbox is not checked */
+input[type="checkbox"] + label::before {
+    content: '';
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    .testimonial-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+
+    .container {
+        margin: 0 20px;
+    }
+
+    .google {
+        grid-column: 1/-1;
+        padding: 30px;
+    }
+
+    .meta {
+        grid-column: 1/-1;
+    }
+}
